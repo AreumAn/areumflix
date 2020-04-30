@@ -1,8 +1,9 @@
 ## Intro
+
 Use the [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction) to build a UI for showing and searching their movies and tv shows.
 
-
 ## Table of Contents
+
 - [Intro](#intro)
 - [Table of Contents](#table-of-contents)
 - [Requirements](#requirements)
@@ -13,17 +14,20 @@ Use the [The Movie Database API](https://developers.themoviedb.org/3/getting-sta
 - [Overview](#overview)
 
 ---
+
 ## Requirements
-* [ ] 3 top menus Movie, TV and Search
-* [ ] We can move previous page with back button
-* [ ] `Movie` menu shows movies by section: nowPlaying, upcoming, airingToday
-* [ ] `TV show ` menu shows contents by section: topRated, popular, popular
-* [ ] Search results includes some of information - title, picture etc
-* [ ] When a user clicks on a result, it moves to detail page.
-* [ ] Use debounce to prevent unnecessary API calls: Custom debounce in `utils/debounce.js` (reference: https://dev.to/gabe_ragland/debouncing-with-react-hooks-jci)
-* [ ] Only show last results: Use axios cancelToken to cancel the previous request, if there is new request called.
-* [ ] Use pagination in search page
-* [ ] User can search tv or movie by option bar
+
+- [ ] 4 top menus Home, Movie, TV and Search
+- [ ] We can move previous page with back button
+- [ ] `Home` menu shows popular Movies and TV
+- [ ] `Movie` menu shows movies by section: nowPlaying, upcoming, popular
+- [ ] `TV show` menu shows contents by section: topRated, popular, airingToday
+- [ ] Search results includes some of information - title, picture etc
+- [ ] When a user clicks on a result, it moves to detail page.
+- [ ] Use debounce to prevent unnecessary API calls: Custom debounce in `utils/debounce.js` (reference: https://dev.to/gabe_ragland/debouncing-with-react-hooks-jci)
+- [ ] Only show last results: Use axios cancelToken to cancel the previous request, if there is new request called.
+- [ ] Use pagination in search page
+- [ ] User can search tv or movie by option bar
 
 ## Setup
 
@@ -32,7 +36,9 @@ Use the [The Movie Database API](https://developers.themoviedb.org/3/getting-sta
 3. Open your browser to [localhost:3000](http://localhost:3000)
 
 ## Dev Setup
+
 - **eslint, prettier**
+
 ```
 yarn add --dev eslint
 yarn run eslint --init
@@ -40,15 +46,14 @@ yarn add eslint-config-prettier
 ```
 
 ## Library
+
 - axios : To get api data
 - prop-types
 - styled-componenets
 - react-router-dom : To move detail page
 
 ## API Data
+
 [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
 
-
 ## Overview
-
-
