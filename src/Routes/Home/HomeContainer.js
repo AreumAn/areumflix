@@ -3,10 +3,8 @@ import { movieApi } from '../../api';
 import HomePresenter from './HomePresenter';
 
 const HomeContainer = () => {
-  const [nowPlaying, setNowPlaying] = useState(null);
-  const [upcoming, setUpcoming] = useState(null);
-  const [popular, setPopular] = useState(null);
-  const [error, setError] = useState(null);
+  const [movieList, setMovieList] = useState({});
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,9 +19,11 @@ const HomeContainer = () => {
         const {
           data: { results: popular },
         } = await movieApi.popular();
-        setNowPlaying(nowPlaying);
-        setUpcoming(upcoming);
-        setPopular(popular);
+        setMovieList({
+          nowPlaying: nowPlaying,
+          upcoming: upcoming,
+          popular: popular,
+        });
       } catch (e) {
         setError(e);
       } finally {
@@ -36,13 +36,7 @@ const HomeContainer = () => {
   }, []);
 
   return (
-    <HomePresenter
-      nowPlaying={nowPlaying}
-      upcoming={upcoming}
-      popular={popular}
-      error={error}
-      loading={loading}
-    />
+    <HomePresenter movieList={movieList} error={error} loading={loading} />
   );
 };
 
