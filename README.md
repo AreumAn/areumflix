@@ -49,7 +49,7 @@ yarn add eslint-config-prettier
 
 - axios : To get api data
 - prop-types
-- styled-componenets
+- styled-componenets, styled-reset
 - react-router-dom : To move detail page
 
 ## API Data
