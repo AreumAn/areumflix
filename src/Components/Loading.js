@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledLoading = styled.div`
-  margin: 3rem 10rem;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  margin-top: 20px;
 `;
 
 const Loading = () => {
