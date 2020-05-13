@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Loading from '../../Components/Loading';
 
 const StyledHomePresenter = styled.div`
   padding: 20px;
@@ -8,7 +9,7 @@ const StyledHomePresenter = styled.div`
 
 const HomePresenter = ({ nowPlaying, upcoming, popular, loading, error }) => {
   if (loading) {
-    return <div>Loading....</div>;
+    return <Loading />;
   }
   console.log(nowPlaying, upcoming, popular, error);
   return <StyledHomePresenter>haha</StyledHomePresenter>;
