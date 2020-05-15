@@ -12,18 +12,19 @@ Use the [The Movie Database API](https://developers.themoviedb.org/3/getting-sta
 - [Library](#library)
 - [API Data](#api-data)
 - [Overview](#overview)
+- [TODO](#todo)
 
 ---
 
 ## Requirements
 
-- [ ] 4 top menus Home, Movie, TV and Search
-- [ ] We can move previous page with back button
-- [ ] `Home` menu shows popular Movies and TV
-- [ ] `Movie` menu shows movies by section: nowPlaying, upcoming, popular
-- [ ] `TV show` menu shows contents by section: topRated, popular, airingToday
+- [x] 4 top menus Home, Movie, TV and Search
+- [x] We can move previous page with back button
+- [x] `Home` menu shows popular Movies and TV
+- [x] `Movie` menu shows movies by section: nowPlaying, upcoming, popular
+- [x] `TV show` menu shows contents by section: topRated, popular, airingToday
 - [ ] Search results includes some of information - title, picture etc
-- [ ] When a user clicks on a result, it moves to detail page.
+- [x] When a user clicks on a result, it moves to detail page.
 - [ ] Use debounce to prevent unnecessary API calls: Custom debounce in `utils/debounce.js` (reference: https://dev.to/gabe_ragland/debouncing-with-react-hooks-jci)
 - [ ] Only show last results: Use axios cancelToken to cancel the previous request, if there is new request called.
 - [ ] Use pagination in search page
@@ -57,3 +58,7 @@ yarn add eslint-config-prettier
 [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
 
 ## Overview
+
+## TODO
+
+- [ ] Remove `eslint-disable-next-line no-undef`
