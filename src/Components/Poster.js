@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const StyledPoster = styled.div`
   font-size: 12px;
@@ -36,25 +37,30 @@ const Year = styled.span`
 `;
 
 const Poster = ({ id, imageUrl, title, rating, year, isMovie }) => (
-  <StyledPoster>
-    <ImageContainer>
-      <Image
-        bgUrl={
-          imageUrl
-            ? `https://image.tmdb.org/t/p/w300${imageUrl}`
-            : require('../assets/noPosterSmall.png')
-        }
-      />
-      <Rating>
-        <span role="img" aria-label="rating">
-          ⭐️
-        </span>{' '}
-        {rating}/10
-      </Rating>
-    </ImageContainer>
-    <Title>{title.length > 18 ? `${title.substring(0, 18)}...` : title}</Title>
-    <Year>{year}</Year>
-  </StyledPoster>
+  <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
+    <StyledPoster>
+      <ImageContainer>
+        <Image
+          bgUrl={
+            imageUrl
+              ? `https://image.tmdb.org/t/p/w300${imageUrl}`
+              : // eslint-disable-next-line no-undef
+                require('../assets/noPosterSmall.png')
+          }
+        />
+        <Rating>
+          <span role="img" aria-label="rating">
+            ⭐️
+          </span>{' '}
+          {rating}/10
+        </Rating>
+      </ImageContainer>
+      <Title>
+        {title.length > 18 ? `${title.substring(0, 18)}...` : title}
+      </Title>
+      <Year>{year}</Year>
+    </StyledPoster>
+  </Link>
 );
 
 export default Poster;
