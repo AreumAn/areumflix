@@ -1,1 +1,3 @@
-export default () => 'Movie';
+import MovieContainer from './MovieContainer';
+
+export default MovieContainer;

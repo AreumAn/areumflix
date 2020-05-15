@@ -7,6 +7,8 @@ const HomeContainer = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
+  const sectionArr = ['nowPlaying', 'upcoming', 'popular'];
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,7 +38,12 @@ const HomeContainer = () => {
   }, []);
 
   return (
-    <HomePresenter movieList={movieList} error={error} loading={loading} />
+    <HomePresenter
+      sectionArr={sectionArr}
+      movieList={movieList}
+      error={error}
+      loading={loading}
+    />
   );
 };
 

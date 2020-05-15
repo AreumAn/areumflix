@@ -1,1 +1,3 @@
-export default () => 'TV';
+import TVContainer from './TVContainer';
+
+export default TVContainer;
