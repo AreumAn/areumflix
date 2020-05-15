@@ -10,7 +10,24 @@ const StyledHomePresenter = styled.div`
   padding: 20px;
 `;
 
-const HomePresenter = ({ sectionArr, movieList, loading, error }) => {
+const StyledTypeTitle = styled.div`
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  color: #ffc107;
+  text-align: center;
+  text-decoration: underline;
+`;
+
+const HomePresenter = ({
+  sectionMovieArr,
+  movieList,
+  sectionTVArr,
+  tvList,
+  loading,
+  error,
+}) => {
   if (error) {
     return <Message color="#e74c3c" text={error} />;
   }
@@ -21,7 +38,8 @@ const HomePresenter = ({ sectionArr, movieList, loading, error }) => {
 
   return (
     <StyledHomePresenter>
-      {sectionArr.map((section, idx) => (
+      <StyledTypeTitle>Movies</StyledTypeTitle>
+      {sectionMovieArr.map((section, idx) => (
         <Section key={idx} title={section}>
           {movieList[section].map((movie) => (
             <Poster
@@ -36,13 +54,30 @@ const HomePresenter = ({ sectionArr, movieList, loading, error }) => {
           ))}
         </Section>
       ))}
+      <StyledTypeTitle>TV Shows</StyledTypeTitle>
+      {sectionTVArr.map((section, idx) => (
+        <Section key={idx} title={section}>
+          {tvList[section].map((show) => (
+            <Poster
+              key={show.id}
+              id={show.id}
+              imageUrl={show.poster_path}
+              title={show.original_name}
+              rating={show.vote_average}
+              year={show.first_air_date.substring(0, 4)}
+            />
+          ))}
+        </Section>
+      ))}
     </StyledHomePresenter>
   );
 };
 
 HomePresenter.propTypes = {
-  sectionArr: PropTypes.array,
+  sectionMovieArr: PropTypes.array,
+  sectionTVArr: PropTypes.array,
   movieList: PropTypes.object,
+  tvList: PropTypes.object,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string,
 };

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { movieApi } from '../../api';
+import { movieApi, TVApi } from '../../api';
 import HomePresenter from './HomePresenter';
 
 const HomeContainer = () => {
   const [movieList, setMovieList] = useState({});
+  const [tvList, setTvList] = useState({});
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
 
-  const sectionArr = ['nowPlaying', 'upcoming', 'popular'];
+  const sectionMovieArr = ['nowPlaying', 'upcoming', 'popular'];
+  const sectionTVArr = ['topRated', 'popular', 'airingToday'];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +28,20 @@ const HomeContainer = () => {
           upcoming: upcoming,
           popular: popular,
         });
+        const {
+          data: { results: topRated },
+        } = await TVApi.topRated();
+        const {
+          data: { results: popularTV },
+        } = await TVApi.popular();
+        const {
+          data: { results: airingToday },
+        } = await TVApi.airingToday();
+        setTvList({
+          topRated: topRated,
+          popular: popularTV,
+          airingToday: airingToday,
+        });
       } catch (e) {
         setError(e);
       } finally {
@@ -39,8 +55,10 @@ const HomeContainer = () => {
 
   return (
     <HomePresenter
-      sectionArr={sectionArr}
+      sectionMovieArr={sectionMovieArr}
       movieList={movieList}
+      sectionTVArr={sectionTVArr}
+      tvList={tvList}
       error={error}
       loading={loading}
     />
