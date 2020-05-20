@@ -27,7 +27,7 @@ const TVContainer = () => {
           airingToday: airingToday,
         });
       } catch (e) {
-        setError(e);
+        setError('Can not find result. There is an error.');
       } finally {
         setLoading(false);
       }
