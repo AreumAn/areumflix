@@ -146,4 +146,4 @@ SearchPresenter.propTypes = {
   searchType: PropTypes.string,
   handleOptionChange: PropTypes.func.isRequired,
 };
-export default SearchPresenter;
+export default React.memo(SearchPresenter);

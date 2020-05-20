@@ -47,4 +47,4 @@ MoviePresenter.propTypes = {
   error: PropTypes.string,
 };
 
-export default MoviePresenter;
+export default React.memo(MoviePresenter);

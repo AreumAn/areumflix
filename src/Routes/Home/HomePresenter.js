@@ -82,4 +82,4 @@ HomePresenter.propTypes = {
   error: PropTypes.string,
 };
 
-export default HomePresenter;
+export default React.memo(HomePresenter);

@@ -46,4 +46,4 @@ TVPresenter.propTypes = {
   error: PropTypes.string,
 };
 
-export default TVPresenter;
+export default React.memo(TVPresenter);

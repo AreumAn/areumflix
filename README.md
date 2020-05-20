@@ -26,7 +26,7 @@ Use the [The Movie Database API](https://developers.themoviedb.org/3/getting-sta
 - [x] Search results includes some of information - title, picture etc
 - [x] When a user clicks on a result, it moves to detail page.
 - [x] Use debounce to prevent unnecessary API calls: Custom debounce in `utils/debounce.js` (reference: https://dev.to/gabe_ragland/debouncing-with-react-hooks-jci)
-- [ ] Only show last results: Use axios cancelToken to cancel the previous request, if there is new request called.
+- [x] Only show last results: Use axios cancelToken to cancel the previous request, if there is new request called.
 - [x] User can search tv or movie by option bar
 
 ## Setup
@@ -49,7 +49,7 @@ yarn add eslint-config-prettier
 
 - axios : To get api data
 - prop-types
-- styled-componenets, styled-reset
+- styled-componenets, styled-reset(to use global style)
 - react-router-dom : To move detail page
 
 ## API Data
