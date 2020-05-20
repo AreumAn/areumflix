@@ -3,6 +3,7 @@ import SearchPresenter from './SearchPresenter';
 import { movieApi, TVApi } from '../../api';
 import { useEffect } from 'react';
 import useDebounce from '../../utils/debounce';
+import axios from 'axios';
 
 const SearchContainer = () => {
   const [movieResults, setMovieResults] = useState([]);
@@ -22,16 +23,19 @@ const SearchContainer = () => {
   };
 
   useEffect(() => {
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+
     if (debouncedSearchTerm) {
       const fetchData = async () => {
         setLoading(true);
         try {
           const {
             data: { results: movieResults },
-          } = await movieApi.search(debouncedSearchTerm);
+          } = await movieApi.search(debouncedSearchTerm, source.token);
           const {
             data: { results: tvResults },
-          } = await TVApi.search(debouncedSearchTerm);
+          } = await TVApi.search(debouncedSearchTerm, source.token);
           setMovieResults(movieResults);
           setTvResults(tvResults);
         } catch (e) {
@@ -43,6 +47,9 @@ const SearchContainer = () => {
 
       fetchData();
     }
+    return () => {
+      source.cancel();
+    };
   }, [debouncedSearchTerm, searchType]);
 
   return (
