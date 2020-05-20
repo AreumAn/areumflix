@@ -61,3 +61,4 @@ yarn add eslint-config-prettier
 ## TODO
 
 - [ ] Remove `eslint-disable-next-line no-undef`
+- [ ] optimization and remove duplication code
