@@ -89,7 +89,7 @@ const SearchPresenter = ({
         <Loading />
       ) : (
         <>
-          {movieResults && movieResults.length > 0 && (
+          {searchType !== 'tv' && movieResults && movieResults.length > 0 && (
             <Section title="Movie Result">
               {movieResults.map((movie) => (
                 <Poster
@@ -104,7 +104,7 @@ const SearchPresenter = ({
               ))}
             </Section>
           )}
-          {tvResults && tvResults.length > 0 && (
+          {searchType !== 'movie' && tvResults && tvResults.length > 0 && (
             <Section title="TV Result">
               {tvResults.map((show) => (
                 <Poster

@@ -43,7 +43,7 @@ const SearchContainer = () => {
 
       fetchData();
     }
-  }, [debouncedSearchTerm]);
+  }, [debouncedSearchTerm, searchType]);
 
   return (
     <>

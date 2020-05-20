@@ -27,8 +27,7 @@ Use the [The Movie Database API](https://developers.themoviedb.org/3/getting-sta
 - [x] When a user clicks on a result, it moves to detail page.
 - [x] Use debounce to prevent unnecessary API calls: Custom debounce in `utils/debounce.js` (reference: https://dev.to/gabe_ragland/debouncing-with-react-hooks-jci)
 - [ ] Only show last results: Use axios cancelToken to cancel the previous request, if there is new request called.
-- [ ] Use pagination in search page
-- [ ] User can search tv or movie by option bar
+- [x] User can search tv or movie by option bar
 
 ## Setup
 
