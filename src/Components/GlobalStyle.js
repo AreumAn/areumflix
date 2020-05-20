@@ -17,6 +17,22 @@ const GlobalStyles = createGlobalStyle`
         color: white;
         padding-top: 4rem;
     }
+    /* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
 `;
 
 export default GlobalStyles;

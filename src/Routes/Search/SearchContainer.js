@@ -11,9 +11,14 @@ const SearchContainer = () => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const [searchType, setSearchType] = useState('all');
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleOptionChange = (event) => {
+    setSearchType(event.target.value);
   };
 
   useEffect(() => {
@@ -49,6 +54,8 @@ const SearchContainer = () => {
         tvResults={tvResults}
         error={error}
         loading={loading}
+        handleOptionChange={handleOptionChange}
+        searchType={searchType}
       />
     </>
   );
