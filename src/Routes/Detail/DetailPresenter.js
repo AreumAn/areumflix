@@ -87,7 +87,8 @@ const DetailPresenter = ({ showDetail, loading, error }) => {
           bgImage={
             showDetail.poster_path
               ? `https://image.tmdb.org/t/p/original${showDetail.poster_path}`
-              : require('../../assets/noPosterSmall.png')
+              : // eslint-disable-next-line no-undef
+                require('../../assets/noPosterSmall.png')
           }
         />
         <StyledData>
